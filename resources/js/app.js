@@ -65,7 +65,7 @@ function makeNotification(data){
     var message = messageForNotification(data);
     var newNotificationHtml = `
         <li class="notification active">
-        <a href ='/docu/`+ data.data.data.docu_id +`?read=`+data.id +`'>
+        <a href ='/docu/`+ data.data.docu_id +`?read=`+data.id +`'>
             <div class="media">
                 <div class="media-body">`
                 + message +
@@ -96,7 +96,7 @@ function messageForNotification(data){
     else if(data.type == NOTIFICATION_TYPES.SendToNotif){
         message =  `<strong class="notification-title">Document Recieved!</strong>
         <p class="notification-desc">Document with reference number `+ 
-        data.data.data.reference_number +` was sent to you by `+ data.data.data.sender +`</p>`
+        data.data.reference_number +` was sent to you by `+ data.data.data.sender +`</p>`
     }
     return message;
 }

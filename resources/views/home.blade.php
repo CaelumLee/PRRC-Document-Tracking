@@ -19,7 +19,7 @@
         @include('inc.message')  
     </div>
     <h4>{{$title}}</h4>
-    <table class="bordered" id="users-table">
+    <table class="bordered" id="docus-table">
         <thead>
             <tr>
             <th style="width:15%;">REFERENCE NUMBER</th>
@@ -42,7 +42,7 @@
                 <td> {{$out->reference_number}} </td>
                 <td>
                 <a href ='{{url("/docu/{$out->id}")}}' style = "color : #0d47a1">
-                    <b> {{$out->subject}}</b>
+                {{$out->subject}}
                 </a>
                 </td>
                 <td>{{App\User::whereId($out->user_id)->pluck('username')->first()}}</td>
@@ -56,9 +56,9 @@
 @stop
 @push('scripts')
 <script>
-    $('#users-table').DataTable({
+    $('#docus-table').DataTable({
         pagingType: "simple",
-        pageLength: 10,
+        pageLength: 15,
         dom: '<div>pt',
         language:{
             paginate:{
@@ -68,7 +68,7 @@
         },
         order: []
     });
-    oTable = $('#users-table').DataTable();
+    oTable = $('#docus-table').DataTable();
     $('#autocomplete-input').keyup(function() {
         oTable.search($(this).val()).draw();
     });

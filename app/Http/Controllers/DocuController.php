@@ -111,9 +111,9 @@ class DocuController extends Controller
             }
             catch(\Exception $e){
                 DB::rollback();
-                $request->session()->flash('error', 'No user found for recipient : ' . $request->input('recipient'));
-                return back()->withInput();
-                // throw $e;
+                // $request->session()->flash('error', 'No user found for recipient : ' . $request->input('recipient'));
+                // return back()->withInput();
+                throw $e;
             }
         
         return redirect()->route('docu.index');

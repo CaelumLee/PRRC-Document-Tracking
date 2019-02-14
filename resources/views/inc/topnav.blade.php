@@ -1,7 +1,12 @@
 <div class="navbar-fixed">
     <nav class='blue darken-4'>
         <div class="nav-wrapper">
-            <a href="{{URL::to('/')}}/home" class="brand-logo">PRRC</a>
+            <a href="{{URL::to('/')}}/home" class="brand-logo">
+                <img src="https://i.imgur.com/qNfnFn3.png" class="circle responsive-img"
+                style ="width:50px; margin-top:8px;"
+                />
+                PRRC
+            </a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
                 @if(Auth::user()->role->name == 'Encoder' || Auth::user()->role->name == 'Super Admin')
