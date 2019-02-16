@@ -1,55 +1,86 @@
 @extends('layouts.app')
 
 @section('content')
-@include('inc.snav')
+@include('inc.adminSideNav')
 <div class="main">
     <!-- <div class="container"> -->
         <div class="row">
             <div class="col s12">
-                <h2>Dashboard for this department</h2>
+                <h2>Dashboard for {{Auth::user()->department->name}}</h2>
             </div>
 
             <div class="col l3 m6 s12">
-                <div class="card">
+                <div class="card" style ="border : 2px solid green;">
                     <div class="card-stacked">
                         <div class="card-content">
-                            <p>Total records created for this month</p>
+                            <data-counter
+                            icon="create"
+                            v-bind:start="0"
+                            v-bind:end="{{$data_values['a']}}"
+                            ></data-counter>
+                            <p>Total records created</p>
+                            <p>for this month</p>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div class="col l3 m6 s12">
-                <div class="card">
+                <div class="card" style ="border : 2px solid gray;">
                     <div class="card-stacked">
                         <div class="card-content">
-                            <p>Total inactive doucs for this month</p>
+                            <data-counter
+                            icon="error_outline"
+                            v-bind:start="0"
+                            v-bind:end="{{$data_values['b']}}"
+                            ></data-counter>
+                            <p>Total records inactive</p>
+                            <p>for this month</p>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div class="col l3 m6 s12">
-                <div class="card">
+                <div class="card" style ="border : 2px solid yellow;">
                     <div class="card-stacked">
                         <div class="card-content">
-                            <p>Total approved docus for this month</p>
+                        <data-counter
+                            icon="check_box"
+                            v-bind:start="0"
+                            v-bind:end="{{$data_values['c']}}"
+                            ></data-counter>
+                            <p>Total approved documents</p>
+                            <p>for this month</p>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div class="col l3 m6 s12">
-                <div class="card">
+                <div class="card" style ="border : 2px solid red;">
                     <div class="card-stacked">
                         <div class="card-content">
-                            <p>Di ko pa alam paano</p>
+                            <data-counter
+                            icon="archive"
+                            v-bind:start="0"
+                            v-bind:end="{{$data_values['d']}}"
+                            ></data-counter>
+                            <p>Total archived documents</p>
+                            <p>for this month</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="col s7">
+            <div class="col s12">
+                <div class="card" style ="border : 2px solid black;">
+                <bar-chart url="{{route('DocuJson')}}"></bar-chart>
+                </div>
+            </div>
+            
+
+            <!-- <div class="col s7">
                 <table class="dashboard-table" id="users-table">
                     <thead>
                         <tr>
@@ -87,7 +118,7 @@
                         </tr>
                     </tbody>
                 </table>
-            </div>
+            </div> -->
             
         </div>
     <!-- </div> -->

@@ -1,11 +1,9 @@
 window.Vue = require('vue');
+window.axios = require('axios');
 
-// Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-// Vue.component('chart', require('./components/Chart.vue').default);
+Vue.component('data-counter', require('./components/DataCounter.vue').default);
+Vue.component('bar-chart', require('./components/BarChart.vue').default);
 
-// const sample = new Vue({
-//     el: '#chart',
-//     data : {
-//         chartData: [5,10,15,20,25]
-//     }
-// });
+new Vue({
+    el: '#main',
+});
