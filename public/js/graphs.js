@@ -48477,10 +48477,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/dashboard.js":
-/*!***********************************!*\
-  !*** ./resources/js/dashboard.js ***!
-  \***********************************/
+/***/ "./resources/js/graphs.js":
+/*!********************************!*\
+  !*** ./resources/js/graphs.js ***!
+  \********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -48495,13 +48495,13 @@ new Vue({
 /***/ }),
 
 /***/ 1:
-/*!*****************************************!*\
-  !*** multi ./resources/js/dashboard.js ***!
-  \*****************************************/
+/*!**************************************!*\
+  !*** multi ./resources/js/graphs.js ***!
+  \**************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\dtracking\resources\js\dashboard.js */"./resources/js/dashboard.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\dtracking\resources\js\graphs.js */"./resources/js/graphs.js");
 
 
 /***/ })
