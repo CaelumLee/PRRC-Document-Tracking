@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Docu;
 use App\User;
 use App\Holidays;
-use App\TypeOfDocu;
 use Auth;
 use Carbon\Carbon;
 
@@ -60,13 +59,6 @@ class AdminDashboard extends Controller
         ->get();
 
         return view('admin.users', compact('user_list'));
-    }
-
-    public function docuType()
-    {
-        $docu_type_list = TypeOfDocu::get();
-
-        return view('admin.docuType', compact('docu_type_list'));
     }
 
     public function holidays()

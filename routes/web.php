@@ -24,8 +24,11 @@ Route::get('/received', 'HomeController@received')->name('received');
 Route::get('/archived', 'HomeController@archived')->name('archived');
 Route::get('/dashboard/statistics','AdminDashboard@index')->name('dashboard');
 Route::get('/dashboard/users','AdminDashboard@userList')->name('userlists');
-Route::get('/dashboard/docutype','AdminDashboard@docuType')->name('docuType');
 Route::get('/dashboard/holidays','AdminDashboard@holidays')->name('holidays');
+
+Route::get('/dashboard/docutype','DocuTypeDashboardController@index')->name('docuType');
+Route::post('/dashboard/docutype/edit','DocuTypeDashboardController@edit');
+Route::post('/dashboard/docutype/disable','DocuTypeDashboardController@disable');
 
 Route::post('/jsonFile', 'AjaxFileController@getJsonFile');
 

@@ -111,22 +111,21 @@ $(document).on('click', '.edit', function () {
   var dataID = $(this).data('id');
   var docuType = $(this).data('name');
   $('#disabled').val(docuType);
+  $('#docutype_id').val(dataID);
 });
 $(document).on('click', '.delete', function () {
-  var dataID = $(this).data('id'); // $.ajax({
-  //     type:'POST',
-  //     url:'/jsonFile',
-  //     data: {
-  //       dataID : dataID,
-  //       '_token' : '<?php echo csrf_token() ?>'
-  //     },
-  //     success:function(data){
-  //       $("#File_to_place").html(data.File_Uploads);
-  //     },
-  //     fail:function(err){
-  //       console.log(err);
-  //     }
-  // });
+  var dataID = $(this).data('id');
+  var docuType = $(this).data('name');
+  var isDisabled = $(this).data('is_disabled');
+
+  if (isDisabled == 0) {
+    var p = 'Disable ' + docuType + ' in the lists';
+  } else {
+    var p = 'Enable ' + docuType + ' in the lists';
+  }
+
+  $('#title-placeholder').text(p);
+  $('#docutype_id_disable').val(dataID);
 });
 
 /***/ }),

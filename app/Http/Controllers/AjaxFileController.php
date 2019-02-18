@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\RouteInfo;
-use App\TypeOfDocu;
 use Auth;
 
 class AjaxFileController extends Controller

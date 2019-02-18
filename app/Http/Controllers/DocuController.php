@@ -65,7 +65,7 @@ class DocuController extends Controller
         $status_list = $this->statuses->pluck('status','id');
         $user_not_including_the_current_user = $this->user->whereNotIn('id', [Auth::user()->id])->pluck('username');
         $holidays_list = $this->holidays->all();
-        $docu_type = $this->type->pluck('docu_type', 'id');
+        $docu_type = $this->type->where('is_disabled', '0')->pluck('docu_type', 'id');
         return view('docus.create', compact('status_list', 'user_not_including_the_current_user', 
         'holidays_list', 'docu_type'));
     }
@@ -149,7 +149,7 @@ class DocuController extends Controller
     public function edit($id)
     {
         $docu_to_edit = $this->docu->withTrashed()->where('id', $id)->first();
-        $docu_type = $this->type->pluck('docu_type', 'id');
+        $docu_type = $this->type->where('is_disabled', '0')->pluck('docu_type', 'id');
         $holidays_list = $this->holidays->all();
         return view('docus.edit', compact('docu_to_edit', 'docu_type', 'holidays_list'));
     }
